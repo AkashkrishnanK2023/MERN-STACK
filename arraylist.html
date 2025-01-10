@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array in Table Format</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f1f1f1;
+        }
+        .table-container {
+            border: 2px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            width: 70%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(odd) {
+            background-color: #d1e7dd;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <h3>Array Data in Table</h3>
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+         
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        
+        const myArray = ["ARJUN", "ASHWIN", "GURUDEEP", "Sara", "DENNY"];
+
+        const tableBody = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
+
+
+        myArray.forEach((value, index) => {
+            const row = tableBody.insertRow(); 
+
+          
+            const indexCell = row.insertCell(0);
+            indexCell.textContent = index; 
+
+           
+            const valueCell = row.insertCell(1);
+            valueCell.textContent = value;
+        });
+    </script>
+</body>
+</html>
